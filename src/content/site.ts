@@ -1,10 +1,10 @@
 import type { SkillGroup } from "@/types/content";
 
 /**
- * Change this to the real production domain once the Vercel project is live.
- * It is the base for canonical URLs, Open Graph images and the sitemap.
+ * The base for canonical URLs, Open Graph images and the sitemap. Currently the
+ * Vercel-assigned domain; update if a custom domain is added later.
  */
-export const siteUrl = "https://sergiogoncalves.dev";
+export const siteUrl = "https://portfolio-tan-five-62.vercel.app";
 
 export const site = {
   name: "Sérgio Gonçalves",

@@ -10,10 +10,9 @@ project added from here on.
 
 ## Before launch
 
-- `siteUrl` in `src/content/site.ts` is still the placeholder
-  `https://sergiogoncalves.dev`. Set it to the real domain — canonical URLs, the
-  sitemap and Open Graph images all derive from it.
-- Not a git repository yet. Target deploy is Vercel.
+- `siteUrl` in `src/content/site.ts` is the Vercel-assigned domain
+  (`https://portfolio-tan-five-62.vercel.app`). Update it if a custom domain is
+  added.
 
 ## Notes on the content
 

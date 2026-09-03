@@ -1,0 +1,18 @@
+# Source documents, not site content. Holds the academic transcript (individual
+# unit grades and student number), the Portuguese CV and the original portrait.
+# Everything the site actually serves lives in public/ and is committed there.
+CV/
+
+node_modules/
+.next/
+out/
+build/
+.DS_Store
+*.pem
+npm-debug.log*
+.env*
+!.env.example
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+tsconfig.tsbuildinfo

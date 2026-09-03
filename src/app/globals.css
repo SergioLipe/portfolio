@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Design tokens — taken directly from the CV.
+
+   The CV's copper is rgb(192,108,44). At body-text size that measures 3.86:1
+   against white, below the WCAG AA threshold of 4.5:1. It is kept verbatim for
+   headings and non-text accents (where the bar is 3:1 and it passes), while
+   inline links use `copper-ink`, two shades darker at 5.2:1. The two read as
+   the same colour side by side.
+--------------------------------------------------------------------------- */
+@theme {
+  --color-navy: #26323e; /* rgb(38,50,62)   — text and structure   13.0:1 */
+  --color-navy-soft: #3d4b59; /*             — muted headings       8.7:1 */
+  --color-copper: #c06c2c; /* rgb(192,108,44) — accent, large text   3.9:1 */
+  --color-copper-ink: #a45a20; /*             — inline link text     5.2:1 */
+  --color-copper-wash: #f6ede4; /*            — tints and fills            */
+  --color-muted: #63707c; /*                  — dates, secondary     5.0:1 */
+  --color-rule: #ddddd8; /*                   — hairlines                  */
+  --color-surface: #f7f7f5; /*                — cards                      */
+  --color-page: #ffffff;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --text-display: 2.75rem;
+  --text-display--line-height: 1.08;
+  --text-display--letter-spacing: -0.022em;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-page);
+    color: var(--color-navy);
+    font-family: var(--font-sans);
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* A single, consistent focus ring in the CV copper. Never removed. */
+  :focus-visible {
+    outline: 2px solid var(--color-copper);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-copper-wash);
+    color: var(--color-navy);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* The CV's section rule: a short copper segment, then light grey to the edge.
+     One element, one gradient — no wrapper markup. */
+  .rule {
+    height: 2px;
+    background-image: linear-gradient(
+      to right,
+      var(--color-copper) 0 3.5rem,
+      var(--color-rule) 3.5rem 100%
+    );
+  }
+
+  /* Prose defaults for the hand-written case-study body copy. */
+  .prose-cv p {
+    max-width: 68ch;
+    margin-block-end: 1rem;
+  }
+  .prose-cv p:last-child {
+    margin-block-end: 0;
+  }
+  .prose-cv a {
+    color: var(--color-copper-ink);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+  }
+  .prose-cv a:hover {
+    text-decoration-thickness: 2px;
+  }
+}

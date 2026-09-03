@@ -1,0 +1,11 @@
+import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
+import nextTypescript from "eslint-config-next/typescript";
+
+/** eslint-config-next v16 ships native flat configs, so no FlatCompat shim. */
+const eslintConfig = [
+  { ignores: [".next/**", "node_modules/**", "out/**", "CV/**", "public/**"] },
+  ...nextCoreWebVitals,
+  ...nextTypescript,
+];
+
+export default eslintConfig;

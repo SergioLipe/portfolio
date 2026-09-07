@@ -86,9 +86,9 @@ export default async function ProjectPage({ params }: PageProps) {
         </p>
 
         <div className="mt-4 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
-          {/* Matches the CV's project entries and the card it was reached from.
-              The person's name stays navy; project titles carry this colour. */}
-          <h1 className="text-4xl font-bold tracking-tight text-link sm:text-5xl">
+          {/* Copper, matching the CV's project entries and the cards it was
+              reached from. The person's name stays navy; projects are copper. */}
+          <h1 className="text-4xl font-bold tracking-tight text-copper sm:text-5xl">
             {project.title}
           </h1>
           <time

@@ -75,19 +75,19 @@ export const projects: Project[] = [
       decisions: [
         {
           title: "Two builds instead of one",
-          body: "The VR version is the real training experience, but a headset is a hard requirement and not every clinic or user has one. The desktop build means anyone can practise, and it also made the project reviewable by people who'd never put on a Quest.",
+          body: "The VR version is the real training experience, but not every clinic or user has a headset. The desktop build means anyone can practise, and it let people try the project without putting on a Quest.",
         },
         {
           title: "Tracking per patient, not per session",
-          body: "The tracking model is per patient, not per session, because what matters to a therapist isn't one run, it's the trend. Recording frontal collisions, rear collisions, and lateral slips as separate metrics rather than one score means you can see what is improving, not just whether it is.",
+          body: "What matters to a therapist is the trend, not one run. Frontal collisions, rear collisions and lateral slips are recorded separately instead of as a single score, so you can see what is improving, not just whether it is.",
         },
         {
           title: "Frame rate as an accessibility constraint",
-          body: "On the Quest 3, frame rate isn't a polish concern, it's an accessibility one. Low or unstable framerates cause motion sickness, and a training tool that makes users nauseous doesn't get used. That constraint shaped a lot of what went into each scene.",
+          body: "On the Quest 3, a low or unstable frame rate causes motion sickness, and a training tool that makes people nauseous does not get used. That set the limit on how much could go into each scene.",
         },
       ],
       learned: [
-        "I learned Unity from scratch for this project. I already knew C#, so the hard part was never the language, it was the domain: physics tuning, scene optimisation, and everything specific to building for VR rather than a screen.",
+        "I learned Unity from scratch for this project, and the hard part was never the language, it was the domain: physics tuning, scene optimisation, and everything specific to building for VR rather than a screen.",
         "Motion sickness was the constraint that taught me the most. In VR, keeping frame rates high on standalone hardware isn't an optimisation you do at the end, it's a design constraint you build around from the start, and it affects level scale, asset density, and how movement is handled. A desktop game that drops frames is annoying. A VR training tool that drops frames makes the user physically unwell and stops the training.",
         "Working with the APCB also taught me that features I assumed were secondary (how forgiving the physics are, whether a failed run restarts immediately) mattered more to real users than the ones I'd been focused on.",
       ],
@@ -139,24 +139,20 @@ export const projects: Project[] = [
       decisions: [
         {
           title: "Directing the build, not typing it",
-          body: "As CTO I made the calls rather than writing every line by hand, directing development with Claude Code and reviewing, approving, or rejecting every technical proposal before it shipped.",
-        },
-        {
-          title: "Row Level Security as the real boundary",
-          body: "The one I'd highlight: I chose Postgres Row Level Security as the real security boundary for family data, not application-level logic, because RLS holds even if a future feature forgets to check permissions. I validated it with isolation tests between real accounts.",
+          body: "As CTO I made the calls rather than writing every line by hand, directing development with Claude Code and approving or rejecting every technical proposal before it shipped.",
         },
         {
           title: "A PWA over a native app",
-          body: "I also chose a PWA over a native app to skip app store review cycles.",
+          body: "A PWA instead of a native app, to skip app store review cycles.",
         },
         {
           title: "Feature flags over deleting code",
-          body: "I built a feature-flag system so we could disable half-finished work without deleting code.",
+          body: "A feature-flag system, so we could switch off half-finished work without deleting code.",
         },
       ],
       learned: [
         "That reviewing AI-generated code needs to be proportional to risk, not uniform.",
-        "Every feature had to pass end-to-end tests against a real production build and a real database, not just a dev environment, and that discipline caught things a lighter review would have missed: a partially-applied RLS policy, a colour-contrast accessibility issue, and a race condition in UI state. The tests weren't a checkbox, they were how I found out where the AI-written code and my assumptions had actually diverged.",
+        "Every feature had to pass end-to-end tests against a real production build and a real database, not just a dev environment, and that discipline caught things a lighter review would have missed: a database security policy that had only been half applied, a colour-contrast accessibility issue, and a race condition in UI state. The tests weren't a checkbox, they were how I found out where the AI-written code and my assumptions had actually diverged.",
       ],
     },
   },
@@ -205,15 +201,15 @@ export const projects: Project[] = [
       decisions: [
         {
           title: "A service per domain, wired with RabbitMQ",
-          body: "We split each domain into its own service so chat, ratings, and achievements could evolve independently of the core event logic. RabbitMQ handles the asynchronous communication between them, so an action in one service (joining an event) can trigger work in another (unlocking an achievement, sending a notification) without the two being directly coupled.",
+          body: "Chat, ratings and achievements each got their own service, so they could change without touching the core event logic. RabbitMQ connects them: joining an event can unlock an achievement or fire a notification without the services knowing about each other.",
         },
         {
           title: "WebSockets for chat, not the queue",
-          body: "Chat runs over a separate WebSocket server rather than through the message queue, because live chat needs a persistent open connection, not fire-and-forget messaging.",
+          body: "Chat runs on its own WebSocket server rather than through the message queue, because live chat needs a connection that stays open.",
         },
         {
           title: "One command to bring the stack up",
-          body: "Everything runs in Docker Compose so the whole five-service stack comes up with one command, which mattered a lot when three people needed identical environments.",
+          body: "Everything runs in Docker Compose, so all five services come up with one command. That mattered when three of us needed identical environments.",
         },
       ],
       learned: [
@@ -229,7 +225,7 @@ export const projects: Project[] = [
     tagline:
       "A web app for running single-elimination tournaments where you pick every winner yourself.",
     summary:
-      "Tournament Manager shows you two competitors at a time, you pick the one you prefer, and the bracket advances until one is left. You can run a tournament on the built-in themes or upload your own images and build your own.",
+      "Pick a theme, one of the built-in ones or a set of images you upload yourself, and Tournament Manager turns it into a bracket. It shows you two entries at a time, you choose the one you prefer, and it keeps going until one is left.",
     stack: ["PHP", "MySQL", "JavaScript", "AJAX", "Bootstrap", "PDO"],
     links: [
       { label: "Live site", href: "https://www.torneio.site/", kind: "live" },
@@ -252,21 +248,21 @@ export const projects: Project[] = [
       ],
       built: [
         "A PHP and MySQL web app for running single-elimination tournaments where you are the judge. Anywhere from 2 to 16 competitors, with odd numbers handled through byes. You can play with built-in themes or create your own and upload images to them, and every battle is recorded so the statistics page shows which entries actually win over time.",
-        "The whole thing also installs as an app: a service worker, web manifest, and offline page make it a PWA with its own icon and no browser chrome. There's a separate entry point (app.php) that serves the same bracket with accounts stripped out, sharing the view layer with the main site rather than duplicating it.",
+        "It also installs as an app, with its own icon and no browser chrome, and there's a stripped-down version that runs a bracket without an account.",
         "Themes can also be built in bulk from the command line: a tool pulls lead images from Wikipedia articles, another crops and squares them, and a third regenerates the seed SQL.",
       ],
       decisions: [
         {
           title: "Rewriting the security foundations",
-          body: "The rewrite is the interesting part. The original version built every SQL query by string concatenation, stored passwords in plain text, and let anyone delete competitors or inflate statistics with an unauthenticated request. Fixing that properly meant prepared statements everywhere, bcrypt hashes upgraded transparently on each user's next login rather than forcing a reset, and requiring a session, theme ownership, and a CSRF token on every write.",
+          body: "The original built its SQL by string concatenation, kept passwords in plain text, and let anyone delete entries or inflate statistics without logging in. The rewrite uses prepared statements throughout, upgrades old passwords to bcrypt on the next login instead of forcing a reset, and asks for a session, theme ownership and a CSRF token on every write.",
         },
         {
           title: "Validating uploads by decoding them",
-          body: "Upload validation decodes each file rather than trusting finfo or the extension, because a file starting with the bytes GIF89a followed by arbitrary content passes both. Uploads are stored under generated names in a directory derived from the theme ID, with an .htaccess stripping PHP handlers as a second layer.",
+          body: "Uploads are validated by decoding the file, not by trusting its extension: a file that starts with the bytes GIF89a and then holds anything at all passes the usual checks. They are stored under generated names, with an .htaccess stripping PHP handlers as a second layer.",
         },
         {
           title: "Brackets generated, not hand-written",
-          body: "The brackets are generated from the competitor count instead of the eight hand-written HTML files the original had. That's what makes odd-numbered tournaments possible at all.",
+          body: "Brackets are generated from the number of entries, replacing the eight hand-written HTML files the original had. That is what makes odd-numbered tournaments possible at all.",
         },
       ],
       learned: [

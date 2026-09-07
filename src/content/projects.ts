@@ -4,8 +4,8 @@ import type { Project } from "@/types/content";
  * The four case studies.
  *
  * Everything above `body` is verified fact, taken from the CV and from each
- * project's repository. Everything inside `body` is `null` and renders as a
- * visible placeholder until written — see PLACEHOLDERS.md.
+ * project's repository. Everything inside `body` is hand-written prose and is
+ * required by the type: see PLACEHOLDERS.md.
  */
 export const projects: Project[] = [
   {
@@ -13,9 +13,9 @@ export const projects: Project[] = [
     title: "Wheelchair Simulator",
     year: "2026",
     tagline:
-      "A VR and desktop simulator for safe electric wheelchair driving training, built with the Braga Cerebral Palsy Association.",
+      "A VR and desktop simulator for practising electric wheelchair driving, built with the Braga Cerebral Palsy Association.",
     summary:
-      "Driving an electric wheelchair takes motor coordination, spatial awareness and quick reactions to obstacles — skills that need repetition to build, but that are hard to practise safely. Real training needs large spaces, constant supervision and a wheelchair that may not be available. This simulator removes those barriers, letting users practise at their own pace as many times as they need. It runs as a fully immersive experience on the Meta Quest 3 and as a desktop version playable with keyboard and mouse.",
+      "Learning to drive an electric wheelchair takes practice, but real training needs space, supervision and a wheelchair that is not always free. This simulator lets people practise as often as they want, in VR on the Meta Quest 3 or on a desktop with keyboard and mouse.",
     context:
       "Built in partnership with the Associação de Paralisia Cerebral de Braga (APCB). My Master's final project, currently in its real-world application phase.",
     stack: ["Unity", "C#", "Virtual Reality", "Meta Quest 3"],
@@ -80,12 +80,12 @@ export const projects: Project[] = [
     title: "Montenova",
     year: "2026",
     tagline:
-      "A SaaS platform for family screen-time management, built as team CTO during a three-week European accelerator.",
+      "A SaaS platform that helps parents shape their kids' screen time, built as team CTO during a three-week European accelerator.",
     summary:
-      "Montenova lets a parent curate what their children watch: an AI selects YouTube videos based on each child's preferences and generates activities and breaks between them, turning passive viewing into a structured routine. It was built from scratch during the European Innovation Academy, a three-week intensive accelerator where international teams build a startup with mentorship from industry professionals.",
+      "Montenova gives parents a say in what their children watch. An AI picks YouTube videos around each child's interests and puts activities and breaks between them, so screen time follows a routine instead of running until someone stops it.",
     context:
       "Selected for the European Innovation Academy, a three-week intensive accelerator for international teams building a startup from scratch, with mentorship from industry professionals.",
-    role: "Team CTO — I led product development.",
+    role: "Team CTO, leading product development.",
     stack: [
       "Next.js",
       "TypeScript",
@@ -113,7 +113,7 @@ export const projects: Project[] = [
     ],
     body: {
       problem: [
-        "Screen time for kids is either unstructured — a tablet with no limits — or rigid, a fixed timer with no room for what the child is actually doing. Parents wanted something in between: real oversight, but a system that adapts to the actual content, not just a countdown.",
+        "Screen time for kids is either unstructured (a tablet with no limits) or rigid, a fixed timer with no room for what the child is actually doing. Parents wanted something in between: real oversight, but a system that adapts to the actual content, not just a countdown.",
       ],
       built: [
         "A SaaS platform where parents build a screen time program: blocks of curated video pulled from the YouTube Data API, mixed with guided breathing and movement breaks, with the schedule adapting elastically to how long each video actually runs. Built on Next.js, TypeScript, Supabase (Postgres and Auth), Tailwind, and the Claude API for the AI-assisted scheduling layer. Deployed on Vercel with continuous delivery from GitHub, a custom domain and SSL.",
@@ -121,7 +121,7 @@ export const projects: Project[] = [
       decisions: [
         {
           title: "Directing the build, not typing it",
-          body: "As CTO I made the calls rather than writing every line by hand — directing development with Claude Code and reviewing, approving, or rejecting every technical proposal before it shipped.",
+          body: "As CTO I made the calls rather than writing every line by hand, directing development with Claude Code and reviewing, approving, or rejecting every technical proposal before it shipped.",
         },
         {
           title: "Row Level Security as the real boundary",
@@ -147,9 +147,9 @@ export const projects: Project[] = [
     title: "TeamUP",
     year: "2025",
     tagline:
-      "A full-stack sports event platform with a microservices backend and both web and native mobile clients.",
+      "A sports event platform on a microservices backend, with a React web app and a native Android client.",
     summary:
-      "TeamUP brings people together around sports activities: users create and join events, chat with the other participants in real time, rate each other afterwards and earn achievements. It was built as a Master's project, deliberately structured as five independent Laravel microservices communicating over RabbitMQ and a WebSocket server, with a React web client and a native Android app.",
+      "TeamUP is for finding people to play with. You create an event for any sport, others join, everyone chats in real time and rates each other afterwards. Behind it sit five Laravel microservices, a React web app and a native Android client.",
     context: "A Master's project in Software Engineering at IPCA.",
     stack: [
       "Laravel",
@@ -171,7 +171,7 @@ export const projects: Project[] = [
       },
     ],
     highlights: [
-      "Five independent Laravel microservices — users, event manager, chat, rating and achievements — each with its own database and migrations.",
+      "Five independent Laravel microservices (users, event manager, chat, rating and achievements), each with its own database and migrations.",
       "Asynchronous messaging between services over RabbitMQ, with a dedicated WebSocket server for live chat.",
       "The whole backend stack orchestrated with Docker Compose, and an SSL-enabled deployment variant.",
       "Two first-class clients against the same API: a React web app and a native Android app in Kotlin with Jetpack Compose.",
@@ -209,9 +209,9 @@ export const projects: Project[] = [
     title: "Tournament Manager",
     year: "2024",
     tagline:
-      "A web application for running single-elimination bracket tournaments, with asynchronous updates and image management.",
+      "A web app for running single-elimination tournaments where you pick every winner yourself.",
     summary:
-      "Tournament Manager turns any set of contenders into a single-elimination bracket that the user judges themselves: two competitors are shown at a time, you pick the one you prefer, and the bracket advances until one winner is left. Tournaments can be run on built-in themes or on sets of images the user uploads.",
+      "Tournament Manager shows you two competitors at a time, you pick the one you prefer, and the bracket advances until one is left. You can run a tournament on the built-in themes or upload your own images and build your own.",
     stack: ["PHP", "MySQL", "JavaScript", "AJAX", "Bootstrap", "PDO"],
     links: [
       { label: "Live site", href: "https://www.torneio.site/", kind: "live" },

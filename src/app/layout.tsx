@@ -14,8 +14,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${site.name} — ${site.role}`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} | ${site.role}`,
+    template: `%s | ${site.name}`,
   },
   description: site.intro,
   applicationName: site.name,
@@ -27,12 +27,12 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: siteUrl,
     siteName: site.name,
-    title: `${site.name} — ${site.role}`,
+    title: `${site.name} | ${site.role}`,
     description: site.intro,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.role}`,
+    title: `${site.name} | ${site.role}`,
     description: site.intro,
   },
   robots: {
@@ -56,7 +56,7 @@ const personJsonLd = {
   address: { "@type": "PostalAddress", addressLocality: "Braga", addressCountry: "PT" },
   alumniOf: {
     "@type": "CollegeOrUniversity",
-    name: "IPCA — Instituto Politécnico do Cávado e do Ave",
+    name: "Instituto Politécnico do Cávado e do Ave (IPCA)",
   },
   sameAs: [contact.github.href, contact.linkedin.href],
 };

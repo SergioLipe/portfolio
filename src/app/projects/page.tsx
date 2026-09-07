@@ -5,7 +5,7 @@ import { projects } from "@/content/projects";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Case studies on the Wheelchair Simulator, Montenova, TeamUP and Tournament Manager — the problems they solved, what was built, and the trade-offs behind them.",
+    "Case studies on the Wheelchair Simulator, Montenova, TeamUP and Tournament Manager: the problems they solved, what was built, and the trade-offs behind them.",
   alternates: { canonical: "/projects" },
   openGraph: {
     title: "Projects",
@@ -22,10 +22,10 @@ export default function ProjectsPage() {
       <div className="rule mt-4 mb-8" aria-hidden="true" />
 
       <p className="max-w-[68ch] text-navy-soft">
-        Four projects, spanning virtual reality, a SaaS product built in three
-        weeks, a distributed microservices platform, and a database-driven web
-        app. Each page covers the problem, what I built, the technical decisions
-        and their trade-offs, and what I took away from it.
+        Four projects: a VR simulator, a SaaS product built in three weeks, a
+        microservices platform, and a web app I rebuilt from an old one of mine.
+        Each page covers the problem, what I built, the decisions behind it, and
+        what I learned.
       </p>
 
       <ul className="mt-12 grid gap-5 sm:grid-cols-2">

@@ -13,7 +13,7 @@ import type {
  */
 
 export const aboutIntro: string[] = [
-  "I am a Software Engineer finishing a Master's in Software Engineering at IPCA, in Braga. My work spans full-stack web development, native mobile, and virtual reality — a range that came less from a plan than from following whichever problem seemed worth solving next.",
+  "I am a Software Engineer finishing a Master's in Software Engineering at IPCA, in Braga. My work spans full-stack web development, native mobile, and virtual reality, a range that came less from a plan than from following whichever problem seemed worth solving next.",
   "That range is the thread through my projects. TeamUP pushed me into distributed systems, five Laravel microservices talking over RabbitMQ, and a native Android client. Montenova was three weeks of building a product from nothing as team CTO. The Wheelchair Simulator took me somewhere I had not expected software to go: a rehabilitation centre, watching people use something I built to practise a skill that matters to their independence.",
 ];
 
@@ -27,7 +27,7 @@ export const pathIntoSoftware: string[] = [
 export const education: TimelineEntry[] = [
   {
     title: "Master's in Software Engineering",
-    organisation: "IPCA — Instituto Politécnico do Cávado e do Ave",
+    organisation: "Instituto Politécnico do Cávado e do Ave (IPCA)",
     period: "2024 – 2026",
     description:
       "Coursework across cloud computing, advanced databases, systems architecture and integration, high-performance computing, applied artificial intelligence, software quality and testing, and research methods. Final project: the VR Wheelchair Simulator, now in its real-world application phase.",
@@ -44,7 +44,7 @@ export const education: TimelineEntry[] = [
 export const awards: TimelineEntry[] = [
   {
     title: "OERN Master's Award",
-    organisation: "Order of Engineers — Northern Region",
+    organisation: "Order of Engineers, Northern Region",
     period: "2026",
     description:
       "An academic merit award granted by the Order of Engineers, Northern Region, recognising academic performance across the Master's programme.",
@@ -56,7 +56,7 @@ export const awards: TimelineEntry[] = [
 export const academicAverage = {
   value: "16",
   outOf: "20",
-  note: "My overall average across the Master's is 16 out of 20 — the record behind the OERN Master's Award, which the Order of Engineers grants on academic merit.",
+  note: "My overall average across the Master's is 16 out of 20, the record behind the OERN Master's Award, which the Order of Engineers grants on academic merit.",
 };
 
 export const publications: Publication[] = [

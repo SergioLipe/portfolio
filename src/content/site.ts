@@ -1,10 +1,10 @@
 import type { SkillGroup } from "@/types/content";
 
 /**
- * The base for canonical URLs, Open Graph images and the sitemap. Currently the
- * Vercel-assigned domain; update if a custom domain is added later.
+ * The base for canonical URLs, Open Graph images and the sitemap. No trailing
+ * slash: paths are appended to it directly.
  */
-export const siteUrl = "https://portfolio-tan-five-62.vercel.app";
+export const siteUrl = "https://www.sergiogoncalves.dev";
 
 export const site = {
   name: "Sérgio Gonçalves",
@@ -17,7 +17,7 @@ export const site = {
     "Software Engineering Master's student with experience in full-stack, mobile and game development. Recipient of an academic merit award and author of scientific papers on my VR simulator.",
   /** A slightly longer opening for the home page. */
   homeIntro:
-    "I build software across the stack — web platforms, mobile apps, and virtual reality. I am finishing a Master's in Software Engineering at IPCA, where my final project is a VR wheelchair driving simulator now being used in real rehabilitation settings.",
+    "I build software across the stack: web platforms, mobile apps, and virtual reality. I am finishing a Master's in Software Engineering at IPCA, where my final project is a VR wheelchair driving simulator now being tested in real rehabilitation settings.",
   photo: {
     src: "/sergio-goncalves.jpg",
     alt: "Sérgio Gonçalves, a portrait photograph.",

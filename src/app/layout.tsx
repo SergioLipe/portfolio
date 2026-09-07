@@ -56,7 +56,7 @@ const personJsonLd = {
   address: { "@type": "PostalAddress", addressLocality: "Braga", addressCountry: "PT" },
   alumniOf: {
     "@type": "CollegeOrUniversity",
-    name: "Instituto Politécnico do Cávado e do Ave (IPCA)",
+    name: "Universidade Politécnica do Cávado e do Ave (IPCA)",
   },
   sameAs: [contact.github.href, contact.linkedin.href],
 };

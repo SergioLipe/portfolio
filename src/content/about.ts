@@ -26,7 +26,7 @@ export const pathIntoSoftware: string[] = [
 export const education: TimelineEntry[] = [
   {
     title: "Master's in Software Engineering",
-    organisation: "Instituto Politécnico do Cávado e do Ave (IPCA)",
+    organisation: "Universidade Politécnica do Cávado e do Ave (IPCA)",
     period: "2024 – 2026",
     description:
       "Coursework across cloud computing, advanced databases, systems architecture and integration, high-performance computing, applied artificial intelligence, software quality and testing, and research methods. Final project: the VR Wheelchair Simulator, now in its real-world application phase.",

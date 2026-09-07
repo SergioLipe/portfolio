@@ -7,9 +7,8 @@ import type {
 /**
  * About-page content.
  *
- * Note on the academic record: only the overall average (16/20) appears here,
- * mentioned in context with the OERN award. Individual unit grades and the
- * student number stay off the site entirely.
+ * Note on the academic record: no grades appear on the site. The overall
+ * average, individual unit grades and the student number all stay off it.
  */
 
 export const aboutIntro: string[] = [
@@ -34,10 +33,9 @@ export const education: TimelineEntry[] = [
   },
   {
     title: "Web Programming (300 hours)",
-    organisation: "Professional Training",
+    organisation: "Instituto do Emprego e Formação Profissional (IEFP)",
     period: "2024",
-    description:
-      "An intensive professional training programme in web development.",
+    description: "A professional training programme in web development.",
   },
 ];
 
@@ -47,17 +45,10 @@ export const awards: TimelineEntry[] = [
     organisation: "Order of Engineers, Northern Region",
     period: "2026",
     description:
-      "An academic merit award granted by the Order of Engineers, Northern Region, recognising academic performance across the Master's programme.",
+      "An academic merit award granted by the Order of Engineers, Northern Region.",
     href: "https://www.oern.pt/noticias/oern-distingue-52-estudantes-na-2-a-edicao-dos-premios-de-mestrado/",
   },
 ];
-
-/** Overall Master's average, out of 20. The only figure taken from the transcript. */
-export const academicAverage = {
-  value: "16",
-  outOf: "20",
-  note: "My overall average across the Master's is 16 out of 20, the record behind the OERN Master's Award, which the Order of Engineers grants on academic merit.",
-};
 
 export const publications: Publication[] = [
   {

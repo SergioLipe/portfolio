@@ -3,7 +3,6 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { EntryHeader } from "@/components/EntryHeader";
 import {
   aboutIntro,
-  academicAverage,
   activities,
   awards,
   education,
@@ -80,9 +79,6 @@ export default function AboutPage() {
       <section aria-labelledby="awards-heading" className="mt-14">
         <SectionHeading id="awards-heading">Awards</SectionHeading>
         <Timeline entries={awards} />
-        <p className="mt-6 max-w-[68ch] border-l-2 border-copper/40 pl-5 text-navy-soft">
-          {academicAverage.note}
-        </p>
       </section>
 
       {/* Publications and conferences */}

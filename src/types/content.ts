@@ -67,7 +67,8 @@ export type TimelineEntry = {
   title: string;
   organisation?: string;
   period: string;
-  description: string;
+  /** Omitted where the title and organisation already say it. */
+  description?: string;
   href?: string;
 };
 

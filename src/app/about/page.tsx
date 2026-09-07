@@ -38,7 +38,11 @@ function Timeline({ entries }: { entries: TimelineEntry[] }) {
             period={entry.period}
             href={entry.href}
           />
-          <p className="mt-2 max-w-[68ch] text-navy-soft">{entry.description}</p>
+          {entry.description ? (
+            <p className="mt-2 max-w-[68ch] text-navy-soft">
+              {entry.description}
+            </p>
+          ) : null}
         </li>
       ))}
     </ul>

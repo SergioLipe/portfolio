@@ -44,8 +44,6 @@ export const awards: TimelineEntry[] = [
     title: "OERN Master's Award",
     organisation: "Order of Engineers, Northern Region",
     period: "2026",
-    description:
-      "An academic merit award granted by the Order of Engineers, Northern Region.",
     href: "https://www.oern.pt/noticias/oern-distingue-52-estudantes-na-2-a-edicao-dos-premios-de-mestrado/",
   },
 ];

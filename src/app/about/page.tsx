@@ -69,7 +69,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Education, with the academic average in context */}
+      {/* Education */}
       <section aria-labelledby="education-heading" className="mt-14">
         <SectionHeading id="education-heading">Education</SectionHeading>
         <Timeline entries={education} />
@@ -154,7 +154,7 @@ export default function AboutPage() {
       <p className="mt-14 text-sm">
         <a
           href={site.cv.href}
-          className="text-copper-ink underline decoration-1 underline-offset-4 hover:decoration-2"
+          className="link"
         >
           {site.cv.label}
         </a>

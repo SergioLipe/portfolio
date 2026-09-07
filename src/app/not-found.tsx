@@ -14,14 +14,14 @@ export default function NotFound() {
         That page does not exist. Try the{" "}
         <Link
           href="/projects"
-          className="text-copper-ink underline decoration-1 underline-offset-4 hover:decoration-2"
+          className="link"
         >
           projects
         </Link>{" "}
         or head back{" "}
         <Link
           href="/"
-          className="text-copper-ink underline decoration-1 underline-offset-4 hover:decoration-2"
+          className="link"
         >
           home
         </Link>

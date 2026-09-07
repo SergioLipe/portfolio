@@ -54,7 +54,7 @@ export function SiteFooter() {
           <li>
             <a
               href={`mailto:${contact.email}`}
-              className="inline-flex min-h-11 items-center gap-2 text-sm text-copper-ink underline decoration-1 underline-offset-4 hover:decoration-2"
+              className="inline-flex min-h-11 items-center gap-2 text-sm link"
             >
               <ContactIcon name="email" />
               {contact.email}
@@ -65,7 +65,7 @@ export function SiteFooter() {
               href={contact.github.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center gap-2 text-sm text-copper-ink underline decoration-1 underline-offset-4 hover:decoration-2"
+              className="inline-flex min-h-11 items-center gap-2 text-sm link"
             >
               <ContactIcon name="github" />
               {contact.github.label}
@@ -77,7 +77,7 @@ export function SiteFooter() {
               href={contact.linkedin.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center gap-2 text-sm text-copper-ink underline decoration-1 underline-offset-4 hover:decoration-2"
+              className="inline-flex min-h-11 items-center gap-2 text-sm link"
             >
               <ContactIcon name="linkedin" />
               {contact.linkedin.label}

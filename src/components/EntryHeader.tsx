@@ -20,7 +20,7 @@ export function EntryHeader({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="underline decoration-1 underline-offset-4 hover:decoration-2"
+      className="underline decoration-copper decoration-1 underline-offset-4 hover:decoration-2"
     >
       {title}
       <span className="sr-only"> (opens in a new tab)</span>

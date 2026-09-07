@@ -5,15 +5,15 @@
 
    The CV's copper is rgb(192,108,44). At body-text size that measures 3.86:1
    against white, below the WCAG AA threshold of 4.5:1. It is kept verbatim for
-   headings and non-text accents (where the bar is 3:1 and it passes), while
-   inline links use `copper-ink`, two shades darker at 5.2:1. The two read as
-   the same colour side by side.
+   headings and non-text accents (where the bar is 3:1 and it passes), and for
+   link underlines. `copper-ink`, two shades darker at 5.2:1, is used wherever
+   the colour carries text: link hover, and the current item in the nav.
 --------------------------------------------------------------------------- */
 @theme {
   --color-navy: #26323e; /* rgb(38,50,62)   — text and structure   13.0:1 */
   --color-navy-soft: #3d4b59; /*             — muted headings       8.7:1 */
   --color-copper: #c06c2c; /* rgb(192,108,44) — accent, large text   3.9:1 */
-  --color-copper-ink: #a45a20; /*             — inline link text     5.2:1 */
+  --color-copper-ink: #a45a20; /*             — link hover, nav       5.2:1 */
   --color-copper-wash: #f6ede4; /*            — tints and fills            */
   --color-muted: #63707c; /*                  — dates, secondary     5.0:1 */
   --color-rule: #ddddd8; /*                   — hairlines                  */
@@ -81,6 +81,21 @@
     );
   }
 
+  /* Links. Copper belongs to titles, so a copper link reads as a heading and
+     the two get confused. A link is navy text on a copper underline instead:
+     unmistakably a link, never mistakable for a title. */
+  .link {
+    color: var(--color-navy);
+    text-decoration: underline;
+    text-decoration-color: var(--color-copper);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+  .link:hover {
+    color: var(--color-copper-ink);
+    text-decoration-thickness: 2px;
+  }
+
   /* Prose defaults for the hand-written case-study body copy. */
   .prose-cv p {
     max-width: 68ch;
@@ -90,12 +105,14 @@
     margin-block-end: 0;
   }
   .prose-cv a {
-    color: var(--color-copper-ink);
+    color: var(--color-navy);
     text-decoration: underline;
+    text-decoration-color: var(--color-copper);
     text-underline-offset: 2px;
     text-decoration-thickness: 1px;
   }
   .prose-cv a:hover {
+    color: var(--color-copper-ink);
     text-decoration-thickness: 2px;
   }
 }

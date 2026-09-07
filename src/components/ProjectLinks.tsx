@@ -70,7 +70,7 @@ export function ProjectLinks({
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-copper-ink underline decoration-1 underline-offset-4 hover:decoration-2"
+            className="inline-flex min-h-11 items-center gap-2 text-sm font-medium link"
           >
             <LinkIcon kind={link.kind} />
             <span>

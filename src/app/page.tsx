@@ -49,7 +49,7 @@ export default function HomePage() {
         <p className="mt-8 text-sm">
           <Link
             href="/about"
-            className="text-copper-ink underline decoration-1 underline-offset-4 hover:decoration-2"
+            className="link"
           >
             More about my background and research
           </Link>

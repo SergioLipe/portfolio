@@ -17,7 +17,7 @@ export const projects: Project[] = [
     summary:
       "Learning to drive an electric wheelchair takes practice, but real training needs space, supervision and a wheelchair that is not always free. This simulator lets people practise as often as they want, in VR on the Meta Quest 3 or on a desktop with keyboard and mouse.",
     context:
-      "Built in partnership with the Associação de Paralisia Cerebral de Braga (APCB). My Master's final project, currently in its real-world application phase.",
+      "Built in partnership with the Braga Cerebral Palsy Association (APCB). My Master's final project, currently in its real-world application phase.",
     stack: ["Unity", "C#", "Virtual Reality", "Meta Quest 3"],
     links: [
       {
@@ -42,6 +42,24 @@ export const projects: Project[] = [
       "Article published in the RIAGE journal",
       "Short paper at SASYR",
     ],
+    images: [
+      {
+        src: "/projects/wheelchair-simulator/city-crossing.webp",
+        alt: "First-person view from the wheelchair at a city crosswalk, a red car crossing in front and taxis moving along the street beyond.",
+        width: 1600,
+        height: 900,
+        caption:
+          "An urban level, where the traffic has to be read before crossing. The HUD tracks time, collisions and lateral slips.",
+      },
+      {
+        src: "/projects/wheelchair-simulator/apartment.webp",
+        alt: "First-person view from the wheelchair inside a furnished apartment, facing a dining table and chairs with a living room beyond.",
+        width: 1600,
+        height: 900,
+        caption:
+          "The apartment level, where the doorways and furniture leave very little room to turn.",
+      },
+    ],
     // No `highlights`: every one of them restated the prose below, which says it
     // better. The levels, freestyle mode, physics, collision metrics, star ratings
     // and per-patient tracking are all covered in `built` and `decisions`.
@@ -52,7 +70,7 @@ export const projects: Project[] = [
       built: [
         "A driving simulator that removes those constraints, letting users practise at their own pace as many times as they need. Ten progressive levels, each unlocking as you complete the one before, take you from the fundamentals (straight lines, 90° and 180° turns, an obstacle course, reverse driving, navigating a tight apartment) out into urban scenarios with moving pedestrians, ramps, traffic lights, and crossings. There's also a freestyle mode: an open virtual city with no timer or scoring, for consolidating skills without pressure.",
         "Under that sits realistic wheelchair physics with real-world speeds and a choice of front- or rear-wheel steering, a collision system that distinguishes frontal and rear impacts from lateral slips, gamification with one to three stars per level, and per-patient performance tracking that records completion time and keeps a full session history rather than just the latest run, so therapists can follow progress across sessions. Fully localised in Portuguese and English.",
-        "Built in Unity and C#, running both as a fully immersive VR experience on the Meta Quest 3 and as a desktop version with keyboard and mouse. Developed in partnership with the Associação de Paralisia Cerebral de Braga, and published on the Meta Horizon Store.",
+        "Built in Unity and C#, running both as a fully immersive VR experience on the Meta Quest 3 and as a desktop version with keyboard and mouse. Developed in partnership with the Braga Cerebral Palsy Association, and published on the Meta Horizon Store.",
       ],
       decisions: [
         {
@@ -69,7 +87,7 @@ export const projects: Project[] = [
         },
       ],
       learned: [
-        "I learned Unity and C# from scratch for this project, and the hardest part wasn't the language, it was the domain: physics tuning, scene optimisation, and everything specific to building for VR rather than a screen.",
+        "I learned Unity from scratch for this project. I already knew C#, so the hard part was never the language, it was the domain: physics tuning, scene optimisation, and everything specific to building for VR rather than a screen.",
         "Motion sickness was the constraint that taught me the most. In VR, keeping frame rates high on standalone hardware isn't an optimisation you do at the end, it's a design constraint you build around from the start, and it affects level scale, asset density, and how movement is handled. A desktop game that drops frames is annoying. A VR training tool that drops frames makes the user physically unwell and stops the training.",
         "Working with the APCB also taught me that features I assumed were secondary (how forgiving the physics are, whether a failed run restarts immediately) mattered more to real users than the ones I'd been focused on.",
       ],

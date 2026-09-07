@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProjectLinks } from "@/components/ProjectLinks";
+import { ProjectGallery } from "@/components/ProjectGallery";
 import { TechList } from "@/components/TechList";
 import { getProject, projects } from "@/content/projects";
 import type { Decision } from "@/types/content";
@@ -140,6 +141,10 @@ export default async function ProjectPage({ params }: PageProps) {
       <section aria-labelledby="built-heading" className="mt-14">
         <SectionHeading id="built-heading">What I built</SectionHeading>
         <Paragraphs items={project.body.built} />
+
+        {project.images?.length ? (
+          <ProjectGallery images={project.images} />
+        ) : null}
 
         {project.highlights?.length ? (
           <ul className="mt-8 space-y-3">

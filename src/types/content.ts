@@ -12,6 +12,17 @@ export type ProjectLink = {
   kind: LinkKind;
 };
 
+/** A screenshot of the project, served from `public/`. */
+export type ProjectImage = {
+  src: string;
+  /** What the shot actually shows, for anyone who cannot see it. */
+  alt: string;
+  /** Intrinsic size, so the layout reserves the right space before it loads. */
+  width: number;
+  height: number;
+  caption?: string;
+};
+
 /** A technical decision and the trade-off it carried. */
 export type Decision = {
   title: string;
@@ -38,6 +49,8 @@ export type Project = {
   recognition?: string[];
   /** Verified facts about the build, safe to show before the prose is written. */
   highlights?: string[];
+  /** Screenshots, shown under "What I built". */
+  images?: ProjectImage[];
   body: {
     /** The problem it solved. */
     problem: string[];

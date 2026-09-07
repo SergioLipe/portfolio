@@ -3,8 +3,8 @@ import type { Project } from "@/types/content";
 import { TechList } from "@/components/TechList";
 
 /**
- * A project entry in the CV's layout: copper title, muted year right-aligned,
- * tagline beneath, tech line last. The whole card is one link.
+ * A project entry in the CV's layout: title in the link colour, since the whole
+ * card is one link, muted year right-aligned, tagline beneath, tech line last.
  */
 export function ProjectCard({ project }: { project: Project }) {
   return (
@@ -14,7 +14,7 @@ export function ProjectCard({ project }: { project: Project }) {
         className="group flex h-full flex-col rounded-sm border border-rule bg-page p-6 transition-[border-color,transform,box-shadow] duration-150 hover:-translate-y-px hover:border-copper/60 hover:shadow-[0_1px_12px_rgba(38,50,62,0.06)]"
       >
         <div className="flex items-baseline justify-between gap-4">
-          <h3 className="text-xl font-bold text-copper group-hover:text-copper-ink">
+          <h3 className="text-xl font-bold text-link group-hover:text-link-ink">
             {project.title}
           </h3>
           <time

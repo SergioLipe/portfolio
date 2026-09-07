@@ -5,9 +5,12 @@
 
    The CV's copper is rgb(192,108,44). At body-text size that measures 3.86:1
    against white, below the WCAG AA threshold of 4.5:1. It is kept verbatim for
-   headings and non-text accents (where the bar is 3:1 and it passes), and for
-   link underlines. `copper-ink`, two shades darker at 5.2:1, is used wherever
-   the colour carries text: link hover, and the current item in the nav.
+   headings and non-text accents (where the bar is 3:1 and it passes), while
+   `copper-ink`, two shades darker at 5.2:1, carries the current item in the nav.
+
+   Links get their own blue, the one colour here that is neither a heading nor
+   body text, so nothing clickable can be mistaken for a title. It measures
+   5.9:1 against white and 5.7:1 against the footer's surface.
 --------------------------------------------------------------------------- */
 @theme {
   --color-navy: #26323e; /* rgb(38,50,62)   — text and structure   13.0:1 */
@@ -15,6 +18,8 @@
   --color-copper: #c06c2c; /* rgb(192,108,44) — accent, large text   3.9:1 */
   --color-copper-ink: #a45a20; /*             — link hover, nav       5.2:1 */
   --color-copper-wash: #f6ede4; /*            — tints and fills            */
+  --color-link: #1d6a9a; /*                       — links                 5.9:1 */
+  --color-link-ink: #14506f; /*                   — link hover            9.0:1 */
   --color-muted: #63707c; /*                  — dates, secondary     5.0:1 */
   --color-rule: #ddddd8; /*                   — hairlines                  */
   --color-surface: #f7f7f5; /*                — cards                      */
@@ -81,18 +86,15 @@
     );
   }
 
-  /* Links. Copper belongs to titles, so a copper link reads as a heading and
-     the two get confused. A link is navy text on a copper underline instead:
-     unmistakably a link, never mistakable for a title. */
+  /* Links carry their own colour: copper reads as a title, navy as body text. */
   .link {
-    color: var(--color-navy);
+    color: var(--color-link);
     text-decoration: underline;
-    text-decoration-color: var(--color-copper);
     text-decoration-thickness: 1px;
     text-underline-offset: 4px;
   }
   .link:hover {
-    color: var(--color-copper-ink);
+    color: var(--color-link-ink);
     text-decoration-thickness: 2px;
   }
 
@@ -105,14 +107,13 @@
     margin-block-end: 0;
   }
   .prose-cv a {
-    color: var(--color-navy);
+    color: var(--color-link);
     text-decoration: underline;
-    text-decoration-color: var(--color-copper);
     text-underline-offset: 2px;
     text-decoration-thickness: 1px;
   }
   .prose-cv a:hover {
-    color: var(--color-copper-ink);
+    color: var(--color-link-ink);
     text-decoration-thickness: 2px;
   }
 }

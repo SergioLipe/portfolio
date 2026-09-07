@@ -22,10 +22,11 @@ export const site = {
     src: "/sergio-goncalves.jpg",
     alt: "Sérgio Gonçalves, a portrait photograph.",
   },
-  cv: {
-    href: "/CV_Sergio_Goncalves_ENG.pdf",
-    label: "Download CV (PDF)",
-  },
+  /** Both language versions, generated from the LaTeX in the CV folder. */
+  cv: [
+    { href: "/CV_Sergio_Goncalves_ENG.pdf", label: "Download CV (English)" },
+    { href: "/CV_Sergio_Goncalves_PT.pdf", label: "Download CV (Português)" },
+  ],
 } as const;
 
 export const contact = {

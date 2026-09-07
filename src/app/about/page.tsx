@@ -155,14 +155,15 @@ export default function AboutPage() {
         <Timeline entries={activities} />
       </section>
 
-      <p className="mt-14 text-sm">
-        <a
-          href={site.cv.href}
-          className="link"
-        >
-          {site.cv.label}
-        </a>
-      </p>
+      <ul className="mt-14 flex flex-wrap gap-x-8 gap-y-2 text-sm">
+        {site.cv.map((cv) => (
+          <li key={cv.href}>
+            <a href={cv.href} className="link">
+              {cv.label}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

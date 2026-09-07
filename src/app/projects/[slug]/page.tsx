@@ -79,7 +79,7 @@ export default async function ProjectPage({ params }: PageProps) {
         <p className="text-sm">
           <Link
             href="/projects"
-            className="text-muted underline decoration-1 underline-offset-4 hover:text-copper-ink"
+            className="link"
           >
             Projects
           </Link>
